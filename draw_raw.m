@@ -21,7 +21,7 @@ raw_max = max([max(max(max(raw_matrix))), max(max(max(raw_matrix_add)))]);
 
 figure(1)
 % colormap(slanCM('guppy', 'truncation', [60, 220]))
-colormap(slanCM('parula', 'truncation', [0, round(max(max(max(raw_matrix))) / raw_max * 256)]))
+colormap(slanCM('parula', 'truncation', [0, round(max(max(max(raw_matrix))) / raw_max * 256)]));
 
 for x_step=0:(x_num-1)
     for y_step=0:(x_num-1)
@@ -46,10 +46,16 @@ for x_step=0:(x_num-1)
     end
 end
 
-colorbar('Ticks', [0, 1.5, 3, 4.5, 6, 7.5, 9])
+set(gcf,'unit','normalized','position', [0, 0, 0.45, 0.5])
 
-set(gca,'FontSize',16)
-set(gcf,'unit','normalized','position', [0,0,0.4,0.6])
+c = colorbar('Ticks', [0, 1.5, 3, 4.5, 6, 7.5, 9], 'FontSize', 20);
+c.Label.String = 'r_{AW} (N)';
+c.Label.FontSize = 24;
+c.Label.FontName = "Times New Roman";
+c.Position = [0.81, 0.1, 0.025, 0.8];
+
+set(gca,'FontSize',20)
+set(gca,'unit','normalized','position', [0.1, 0.1, 0.65, 0.9])
 xlabel('x (m)','FontName','Times New Roman','FontSize',24,'Rotation',-25)  
 ylabel('y (m)','FontName','Times New Roman','FontSize',24,'Rotation',32)
 zlabel('z (m)','FontName','Times New Roman','FontSize',24,'Rotation',90)
@@ -62,7 +68,7 @@ view(40, 30)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 figure(2)
-colormap(slanCM('parula', 'truncation', [0, round(max(max(max(raw_matrix_add))) / raw_max * 256)]))
+colormap(slanCM('parula', 'truncation', [0, round(max(max(max(raw_matrix_add))) / raw_max * 256)]));
 
 for x_step=0:(x_num-1)
     for y_step=0:(x_num-1)
@@ -77,7 +83,7 @@ for x_step=0:(x_num-1)
                 size = raw * 10;
                 color = raw;
                 edgecolor = [0 0.4470 0.7410];
-                
+
                 scatter3(x, y, z, size, color, 'o', 'filled', MarkerFaceColor='flat', MarkerEdgeColor=edgecolor, MarkerFaceAlpha=.8)
                 hold on
             end
@@ -86,10 +92,16 @@ for x_step=0:(x_num-1)
     end
 end
 
-colorbar('Ticks', [0, 1.5, 3, 4.5, 6, 7.5, 9])
+set(gcf,'unit','normalized','position', [0, 0, 0.45, 0.5])
 
-set(gca,'FontSize',16)
-set(gcf,'unit','normalized','position', [0,0,0.4,0.6])
+c = colorbar('Ticks', [0, 1.5, 3, 4.5, 6, 7.5, 9], 'FontSize', 20);
+c.Label.String = 'r_{AW} (N)';
+c.Label.FontSize = 24;
+c.Label.FontName = "Times New Roman";
+c.Position = [0.81, 0.1, 0.025, 0.8];
+
+set(gca,'FontSize',20)
+set(gca,'unit','normalized','position', [0.1, 0.1, 0.65, 0.9])
 xlabel('x (m)','FontName','Times New Roman','FontSize',24,'Rotation',-25)  
 ylabel('y (m)','FontName','Times New Roman','FontSize',24,'Rotation',32)
 zlabel('z (m)','FontName','Times New Roman','FontSize',24,'Rotation',90)
@@ -101,7 +113,7 @@ view(40, 30)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 figure(3)
-colormap(slanCM('parula'))
+colormap(slanCM('parula', 'truncation', [0, round(max(max(max(raw_matrix))) / raw_max * 256)]));
 
 for x_step=0:(x_num-1)
     for y_step=0:(x_num-1)
@@ -116,7 +128,7 @@ for x_step=0:(x_num-1)
                 size = raw * 10;
                 color = raw;
                 edgecolor = [0 0.4470 0.7410];
-                
+
                 scatter3(x, y, z, size, color, 'o', 'filled', MarkerFaceColor='flat', MarkerEdgeColor=edgecolor, MarkerFaceAlpha=.8)
                 hold on
             end
@@ -125,10 +137,16 @@ for x_step=0:(x_num-1)
     end
 end
 
-colorbar('Ticks', [0, 1.5, 3, 4.5, 6, 7.5, 9])
+set(gcf,'unit','normalized','position', [0, 0, 0.45, 0.5])
 
-set(gca,'FontSize',16)
-set(gcf,'unit','normalized','position', [0,0,0.4,0.6])
+c = colorbar('Ticks', [0, 1.5, 3, 4.5, 6, 7.5, 9], 'FontSize', 20);
+c.Label.String = 'r_{AW} (N)';
+c.Label.FontSize = 24;
+c.Label.FontName = "Times New Roman";
+c.Position = [0.81, 0.1, 0.025, 0.8];
+
+set(gca,'FontSize',20)
+set(gca,'unit','normalized','position', [0.1, 0.1, 0.65, 0.9])
 xlabel('x (m)','FontName','Times New Roman','FontSize',24,'Rotation',-25)  
 ylabel('y (m)','FontName','Times New Roman','FontSize',24,'Rotation',32)
 zlabel('z (m)','FontName','Times New Roman','FontSize',24,'Rotation',90)
